@@ -15,10 +15,10 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/kastell"><img src="https://img.shields.io/npm/v/kastell?color=00d4ff&labelColor=0d1117&label=version" alt="npm version" /></a>
-  <a href="https://www.npmjs.com/package/kastell"><img src="https://img.shields.io/npm/dw/kastell?color=1e6fff&labelColor=0d1117&label=downloads" alt="npm downloads" /></a>
+  <a href="https://www.npmjs.com/package/kastell"><img src="https://img.shields.io/npm/dt/kastell?color=1e6fff&labelColor=0d1117&label=downloads" alt="npm downloads" /></a>
   <a href="https://github.com/kastelldev/kastell/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue?color=1e6fff&labelColor=0d1117" alt="license" /></a>
   <a href="https://github.com/kastelldev/kastell"><img src="https://img.shields.io/github/stars/kastelldev/kastell?color=00d4ff&labelColor=0d1117&style=flat" alt="GitHub stars" /></a>
-  <a href="https://socket.dev/npm/package/kastell"><img src="https://socket.dev/api/badge?package=kastell&type=npm" alt="Socket Security" /></a>
+  <img src="https://img.shields.io/badge/socket-verified-00d4ff?labelColor=0d1117" alt="Socket Security" />
   <img src="https://img.shields.io/badge/node-%3E%3D20-00d4ff?labelColor=0d1117" alt="Node.js" />
   <img src="https://komarev.com/ghpvc/?username=kastelldev&color=00d4ff&style=flat&label=profile+views" alt="Profile views" />
 </p>
@@ -82,4 +82,3 @@ npm install -g kastell
 <p align="center">
   <sub>Built by <a href="https://github.com/omrfc">@omrfc</a> · Apache 2.0</sub>
 </p>
-
