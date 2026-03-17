@@ -27,6 +27,10 @@
 
 <br/>
 
+<img src="https://raw.githubusercontent.com/kastelldev/kastell/main/assets/demo.gif" width="100%" alt="Kastell Demo" />
+
+<br/>
+
 ## What is Kastell?
 
 Kastell is an open-source CLI tool that autonomously manages self-hosted servers. Stop babysitting your infrastructure — Kastell handles security hardening, maintenance, backups, and monitoring so you don't have to.
@@ -109,4 +113,3 @@ npm install -g kastell
 <p align="center">
   <sub>Built by <a href="https://github.com/omrfc">@omrfc</a> · Apache 2.0</sub>
 </p>
-
