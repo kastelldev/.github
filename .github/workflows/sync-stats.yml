@@ -1,0 +1,69 @@
+name: Sync Stats from CLI
+
+on:
+  repository_dispatch:
+    types: [stats-update]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch stats from kastell README
+        id: stats
+        run: |
+          # Download kastell README + MCP server
+          curl -sL https://raw.githubusercontent.com/kastelldev/kastell/main/README.md -o /tmp/readme.md
+          curl -sL https://raw.githubusercontent.com/kastelldev/kastell/main/src/mcp/server.ts -o /tmp/server.ts
+
+          # Parse stats from README
+          TESTS=$(grep -oP '[0-9,]+(?= tests)' /tmp/readme.md | head -1 | tr -d ',')
+          CHECKS=$(grep -oP '[0-9]+(?=\+ checks)' /tmp/readme.md | head -1)
+          CATEGORIES=$(grep -oP '[0-9]+(?= categories)' /tmp/readme.md | head -1)
+
+          # MCP tool count from server.ts registerTool calls
+          MCP=$(grep -cP 'registerTool\(' /tmp/server.ts || echo "")
+
+          echo "tests=$TESTS" >> "$GITHUB_OUTPUT"
+          echo "checks=$CHECKS" >> "$GITHUB_OUTPUT"
+          echo "categories=$CATEGORIES" >> "$GITHUB_OUTPUT"
+          echo "mcp=$MCP" >> "$GITHUB_OUTPUT"
+          echo "Parsed: tests=$TESTS checks=$CHECKS categories=$CATEGORIES mcp=$MCP"
+
+      - name: Update profile README badges
+        env:
+          TESTS: ${{ steps.stats.outputs.tests }}
+          CHECKS: ${{ steps.stats.outputs.checks }}
+          CATEGORIES: ${{ steps.stats.outputs.categories }}
+          MCP: ${{ steps.stats.outputs.mcp }}
+        run: |
+          if [ -z "$TESTS" ] || [ -z "$CHECKS" ]; then
+            echo "::warning::Could not parse stats from kastell README, skipping"
+            exit 0
+          fi
+
+          # URL-encode test count (5506 → 5%2C506)
+          TESTS_FMT=$(printf "%'d" "$TESTS" | sed 's/,/%2C/g')
+
+          # Update badge lines in profile/README.md
+          sed -i "s|tests-[0-9%,C]*%20passing|tests-${TESTS_FMT}%20passing|" profile/README.md
+          sed -i "s|checks-[0-9%,C]*%2B%20security|checks-${CHECKS}%2B%20security|" profile/README.md
+          sed -i "s|categories-[0-9]*-|categories-${CATEGORIES}-|" profile/README.md
+          sed -i "s|MCP%20tools-[0-9]*-|MCP%20tools-${MCP}-|" profile/README.md
+
+          # Update feature text lines
+          sed -i "s|[0-9]\+\+ checks across [0-9]\+ categories|${CHECKS}+ checks across ${CATEGORIES} categories|" profile/README.md
+          sed -i "s|[0-9]\+ tools for AI-powered|${MCP} tools for AI-powered|" profile/README.md
+
+      - name: Commit and push if changed
+        run: |
+          git diff --quiet profile/README.md && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          git commit -m "chore: sync stats from kastell CLI (tests: ${{ steps.stats.outputs.tests }}, checks: ${{ steps.stats.outputs.checks }})"
+          git push
