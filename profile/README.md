@@ -43,22 +43,22 @@ npx kastell
 
 ## Features
 
-- 🔒 **Security Audit** — 406+ checks across 27 categories. CIS, PCI-DSS, HIPAA compliance mapping.
+- 🔒 **Security Audit** — 448+ checks across 31 categories. CIS, PCI-DSS, HIPAA compliance mapping.
 - 🚀 **Deploy** — Provision servers on Hetzner, DigitalOcean, Vultr, Linode. Coolify, Dokploy, or bare VPS.
 - 🔧 **Maintain** — Full maintenance cycles with pre-update snapshots and health checks.
 - 💾 **Backup** — One-command backup & restore with manifest tracking.
 - 🛡️ **Lock** — One-command production hardening: SSH, fail2ban, UFW, sysctl.
-- 🤖 **MCP Server** — 13 tools for AI-powered server management via Claude Code, Cursor, Windsurf.
+- 🤖 **MCP Server** — 14 tools for AI-powered server management via Claude Code, Cursor, Windsurf.
 
 <br/>
 
 ## Stats
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tests-3%2C992%20passing-00d4ff?labelColor=0d1117" alt="Tests" />
-  <img src="https://img.shields.io/badge/checks-406%2B%20security-1e6fff?labelColor=0d1117" alt="Checks" />
-  <img src="https://img.shields.io/badge/categories-27-00d4ff?labelColor=0d1117" alt="Categories" />
-  <img src="https://img.shields.io/badge/MCP%20tools-13-1e6fff?labelColor=0d1117" alt="MCP Tools" />
+  <img src="https://img.shields.io/badge/tests-5%2C506%20passing-00d4ff?labelColor=0d1117" alt="Tests" />
+  <img src="https://img.shields.io/badge/checks-448%2B%20security-1e6fff?labelColor=0d1117" alt="Checks" />
+  <img src="https://img.shields.io/badge/categories-31-00d4ff?labelColor=0d1117" alt="Categories" />
+  <img src="https://img.shields.io/badge/MCP%20tools-14-1e6fff?labelColor=0d1117" alt="MCP Tools" />
 </p>
 
 <br/>
