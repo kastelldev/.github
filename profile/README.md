@@ -55,9 +55,9 @@ npx kastell
 ## Stats
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tests-5%2C506%20passing-00d4ff?labelColor=0d1117" alt="Tests" />
-  <img src="https://img.shields.io/badge/checks-448%2B%20security-1e6fff?labelColor=0d1117" alt="Checks" />
-  <img src="https://img.shields.io/badge/categories-31-00d4ff?labelColor=0d1117" alt="Categories" />
+  <img src="https://img.shields.io/badge/tests-5506%20passing-00d4ff?labelColor=0d1117" alt="Tests" />
+  <img src="https://img.shields.io/badge/checks-457%2B%20security-1e6fff?labelColor=0d1117" alt="Checks" />
+  <img src="https://img.shields.io/badge/categories-30-00d4ff?labelColor=0d1117" alt="Categories" />
   <img src="https://img.shields.io/badge/MCP%20tools-14-1e6fff?labelColor=0d1117" alt="MCP Tools" />
 </p>
 
