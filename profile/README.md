@@ -48,7 +48,7 @@ npx kastell
 - 🔧 **Maintain** — Full maintenance cycles with pre-update snapshots and health checks.
 - 💾 **Backup** — One-command backup & restore with manifest tracking.
 - 🛡️ **Lock** — One-command production hardening: SSH, fail2ban, UFW, sysctl.
-- 🤖 **MCP Server** — 14 tools for AI-powered server management via Claude Code, Cursor, Windsurf.
+- 🤖 **MCP Server** — 15 tools for AI-powered server management via Claude Code, Cursor, Windsurf.
 
 <br/>
 
@@ -58,7 +58,7 @@ npx kastell
   <img src="https://img.shields.io/badge/tests-9871%20passing-00d4ff?labelColor=0d1117" alt="Tests" />
   <img src="https://img.shields.io/badge/checks-468%2B%20security-1e6fff?labelColor=0d1117" alt="Checks" />
   <img src="https://img.shields.io/badge/categories-31-00d4ff?labelColor=0d1117" alt="Categories" />
-  <img src="https://img.shields.io/badge/MCP%20tools-14-1e6fff?labelColor=0d1117" alt="MCP Tools" />
+  <img src="https://img.shields.io/badge/MCP%20tools-15-1e6fff?labelColor=0d1117" alt="MCP Tools" />
 </p>
 
 <br/>
